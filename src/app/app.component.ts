@@ -14,6 +14,7 @@ import { WeatherForecastComponent } from './weather-forecast/weather-forecast.co
 export class AppComponent implements OnInit {
   title = 'cloud-cast';
   location = 'Hamburg, Germany';
+  router: any;
 
   async getTemperatureCelsius(){
     const params = {
@@ -74,6 +75,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+      this.router.navigate(['']);
       this.getTemperatureCelsius();
   }
 

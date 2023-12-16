@@ -1,11 +1,15 @@
-<button>
-    <a routerLink="/weather-forecast">Weather Forecast</a>
-</button>
-<button>
-    <a routerLink="/cloud-cast">Cloud Cast</a>
-</button>
+<div class="main-container">
 
-<h1>{{title}}</h1>
-<p>Your location: Hamburg, Germany</p>
-<h4>Weather:</h4>
-<router-outlet></router-outlet>
+    <button>
+        <a routerLink="/weather-forecast">Weather Forecast</a>
+    </button>
+    <button>
+        <a routerLink="/cloud-cast">Cloud Cast</a>
+    </button>
+    
+    <h1>{{title}}</h1>
+    <p>Your location: Hamburg, Germany</p>
+    <h4>Weather:</h4>
+    <router-outlet></router-outlet>
+
+</div>
