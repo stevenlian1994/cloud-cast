@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { fetchWeatherApi } from 'openmeteo';
-import { TemperatureData } from './TemperatureData';
+import { TemperatureData } from '../models/TemperatureData';
 
 
 @Injectable({

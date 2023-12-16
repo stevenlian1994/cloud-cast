@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AsyncPipe, NgFor, NgIf} from '@angular/common';
-import { WeatherService } from '../weather.service';
-import { TemperatureData } from '../TemperatureData';
+import { WeatherService } from '../../shared/services/weather.service';
+import { TemperatureData } from '../../shared/models/TemperatureData';
 
 @Component({
   selector: 'app-weather-forecast',
