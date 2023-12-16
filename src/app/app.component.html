@@ -1,15 +1,22 @@
 <div class="main-container">
-
-    <button>
-        <a routerLink="/weather-forecast">Weather Forecast</a>
-    </button>
-    <button>
-        <a routerLink="/cloud-cast">Cloud Cast</a>
-    </button>
-    
-    <h1>{{title}}</h1>
-    <p>Your location: Hamburg, Germany</p>
-    <h4>Weather:</h4>
-    <router-outlet></router-outlet>
-
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-lg-6">
+              <button>
+                <a routerLink="/weather-forecast">Weather Forecast</a>
+            </button>
+            <button>
+                <a routerLink="/cloud-cast">Cloud Cast</a>
+            </button>
+            
+            <h1>{{title}}</h1>
+            <p>
+                Welcome to Cloud Cast, your premier destination for cutting-edge weather information and forecasts. With a user-friendly interface, real-time updates, and advanced forecasting technology, Cloud Cast is your go-to source for navigating the elements and making informed decisions in any weather scenario.</p>
+            <h4>Weather:</h4>
+            <router-outlet></router-outlet>
+            </div>
+            <div class="col-sm-3">
+            </div>
+          </div>
 </div>
