@@ -1,0 +1,19 @@
+<p>location-form works!</p>
+<form [formGroup]="locationForm" (ngSubmit)="onSubmit(locationForm)">
+    <div>
+        <label>
+          Location:
+          <input formControlName="location" placeholder="Location">
+        </label>
+    </div>
+    <button type="submit">Send</button>
+</form>
+
+<div *ngIf="newArray">
+    <div *ngFor="let x of newArray">
+        {{x.name}}
+        {{x.country}}
+        {{x.longitude}}
+        {{x.latitude}}
+    </div>    
+</div>
