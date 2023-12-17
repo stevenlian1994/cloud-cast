@@ -9,11 +9,8 @@
     <button type="submit">Send</button>
 </form>
 
-<div *ngIf="newArray">
-    <div *ngFor="let x of newArray">
-        {{x.name}}
-        {{x.country}}
-        {{x.longitude}}
-        {{x.latitude}}
+<div *ngIf="cities">
+    <div *ngFor="let city of cities">
+        <app-city-selector [city]="city" (citySelected)="citySelected($event)"></app-city-selector>
     </div>    
 </div>
