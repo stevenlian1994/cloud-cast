@@ -1,3 +1,6 @@
-<p>Current weather in: {{latitude}} , {{longitude}} </p>
-<!-- <p *ngFor="let w of weather | async">Hi</p> -->
-<p *ngIf="weatherData">{{ weatherData.temperature }}</p>
+
+<div *ngIf="city && weatherData">
+    <h3>Weather:</h3>
+    <p>Current temperature in: {{ city.name }}, {{ city.country}} </p>
+    <p>{{ weatherData.temperature }}</p>
+</div>

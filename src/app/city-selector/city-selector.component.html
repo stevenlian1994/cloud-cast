@@ -1,6 +1,5 @@
 <div *ngIf="city" (click)="cityIsSelected(city)">
-    {{city.name}}
-    {{city.country}}
-    {{city.longitude}}
-    {{city.latitude}}
+    <p>
+        {{city.name}}, {{city.country}} | Latitude: {{city.latitude}}, Longitude: {{city.longitude}}
+    </p>
 </div>

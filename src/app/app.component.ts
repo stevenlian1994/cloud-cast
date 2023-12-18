@@ -13,5 +13,4 @@ import { LocationFormComponent } from './location-form/location-form.component';
 })
 export class AppComponent {
   title = 'Cloud Cast';
-
 }

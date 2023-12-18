@@ -1,6 +1,8 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { City } from '../../shared/models/City';
 import { NgIf } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { citySelected } from '../reducers/city.actions';
 @Component({
   selector: 'app-city-selector',
   standalone: true,
@@ -10,9 +12,10 @@ import { NgIf } from '@angular/common';
 })
 export class CitySelectorComponent {
   @Input() city?: City;
-  @Output() citySelected = new EventEmitter<City>();
+
+  constructor(private store: Store<{selectCityReducer: string}>){}
 
   cityIsSelected(city: City) {
-    this.citySelected.emit(city);
+    this.store.dispatch(citySelected(city));
   }
 }
