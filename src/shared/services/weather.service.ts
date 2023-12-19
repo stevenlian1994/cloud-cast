@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { fetchWeatherApi } from 'openmeteo';
 import { TemperatureData } from '../models/TemperatureData';
+import { City } from '../models/City';
 
 
 @Injectable({
@@ -10,11 +11,11 @@ export class WeatherService {
 
   constructor() { }
 
-  async getTemperatureCurrent(latitude: number, longitude: number) : Promise<any>{
+  async getTemperatureCurrent(city: City) : Promise<any>{
       
     const params = {
-      "latitude": latitude,
-      "longitude": longitude,
+      "latitude": city.latitude,
+      "longitude": city.longitude,
       "current": "temperature_2m",
       "timezone": "Europe/Berlin",
       "forecast_days": 3
@@ -40,9 +41,9 @@ export class WeatherService {
     return weatherData;
   }
 
-  async createWeatherDataObject(weatherData: any){
+  async createWeatherDataObject(weatherData: any, city: City){
     let x = await weatherData;
-    return new TemperatureData(x.current.time,x.current.temperature2m);
+    return new TemperatureData(x.current.time,x.current.temperature2m, city);
   }
 
   async printWeather(weatherData: any){

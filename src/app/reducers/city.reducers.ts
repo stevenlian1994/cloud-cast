@@ -1,21 +1,11 @@
 import { createReducer, on } from "@ngrx/store";
 import { citySelected } from "./city.actions";
-import { City } from "../../shared/models/City";
+import { ICityStatus } from "../../shared/models/ICityStatus";
+import { State } from "../../shared/models/State";
 
-export enum CityStatus {
-    pending,
-    success,
-    error,
-}
-
-export interface CityState {
-    cities: City[];
-    status: CityStatus
-}
-
-export const initialState : CityState = {
+export const initialState : ICityStatus = {
     cities: [],
-    status: CityStatus.pending
+    status: State.pending
 }
 
 export const selectCityReducer = createReducer(
@@ -23,6 +13,6 @@ export const selectCityReducer = createReducer(
     on(citySelected, (state, {city}) => ({
         ...state,
         cities: [city],
-        status: CityStatus.success,
+        status: State.success,
     })),
 )

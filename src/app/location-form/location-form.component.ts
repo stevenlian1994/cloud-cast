@@ -34,10 +34,8 @@ export class LocationFormComponent {
   });
   }
 
-  async citySelected(city: City) {
-    console.log(city);
-    let res = await this.weatherService.getTemperatureCurrent(city.latitude,city.longitude);
-    console.log(res);
+  citySelected(city: City) {
+    this.weatherService.getTemperatureCurrent(city);
   }
 
 }
