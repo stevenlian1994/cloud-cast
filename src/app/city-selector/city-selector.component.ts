@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { City } from '../../shared/models/City';
 import { NgIf } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { citySelected } from '../reducers/city.actions';
+import { cityActionGroup } from '../reducers/city.actions';
 @Component({
   selector: 'app-city-selector',
   standalone: true,
@@ -16,6 +16,6 @@ export class CitySelectorComponent {
   constructor(private store: Store<{selectCityReducer: string}>){}
 
   cityIsSelected(city: City) {
-    this.store.dispatch(citySelected(city));
+    this.store.dispatch(cityActionGroup.select({city}));
   }
 }

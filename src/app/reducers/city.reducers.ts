@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { citySelected } from "./city.actions";
+import { cityActionGroup } from "./city.actions";
 import { ICityStatus } from "../../shared/models/ICityStatus";
 import { State } from "../../shared/models/State";
 
@@ -10,7 +10,7 @@ export const initialState : ICityStatus = {
 
 export const selectCityReducer = createReducer(
     initialState,
-    on(citySelected, (state, {city}) => ({
+    on(cityActionGroup.select, (state, {city}) => ({
         ...state,
         cities: [city],
         status: State.success,
